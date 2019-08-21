@@ -10,15 +10,17 @@ Note that an empty string is also considered valid.
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        paren_dict = { "{": "}", "[": "]", "(": ")"}
-        if len(s) % 2 != 0:
-            return False
-        else:
-            for i in range(0, len(s)//2):
-                print(i)
-                if s[i] != s[i+1] and s[i] != s[len(s)-1-i]:
+        stack = []
+        mapping = {")": "(", "}": "{", "]": "["}
+        for char in s:
+            if char in mapping:
+                top_element = stack.pop() if stack else '#'
+
+                if mapping[char] != top_element:
                     return False
-        return True
+            else:
+                stack.append(char)
+        return not stack
 
 if __name__ == "__main__":
     s = "()[]{}"
