@@ -4,7 +4,7 @@ Example:
 Input: 1->2->4, 1->3->4
 Output: 1->1->2->3->4->4
 '''
-'''
+
 # Solution 1: Recursive
 # Runtime: 36 ms, faster than 96.94% of Python3 online submissions for Merge Two Sorted Lists.
 # Memory Usage: 13.6 MB, less than 6.61% of Python3 online submissions for Merge Two Sorted Lists.
@@ -50,8 +50,9 @@ if __name__ == "__main__":
     while node != None:
         print(node.val)
         node = node.next
-'''
 
+
+'''
 # Solution 2: Iterative
 # Definition for singly-linked list.
 # Runtime: 44 ms, faster than 63.91% of Python3 online submissions for Merge Two Sorted Lists.
@@ -83,6 +84,7 @@ class Solution:
         tail.next = l1 or l2
         return head.next  
 
+
 if __name__ == "__main__":
     l1 = ListNode(1)
     l1_2 = ListNode(2)
@@ -101,3 +103,4 @@ if __name__ == "__main__":
     while node != None:
         print(node.val)
         node = node.next
+'''
