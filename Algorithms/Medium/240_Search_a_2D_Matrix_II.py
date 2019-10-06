@@ -65,7 +65,31 @@ if __name__ == "__main__":
                 [10, 13, 14, 17, 24],
                 [18, 21, 23, 26, 30]
             ]
-    target = 5
+    target = 23
     sol = Solution()
     result = sol.searchMatrix(matrix, target)
     print(result)
+
+'''
+# For index as return
+
+class Solution:
+    def searchMatrix(self, matrix, target):
+        """
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: bool
+        """
+        if not matrix:
+            return (-1, -1)
+        row, col, size = len(matrix) - 1, 0, len(matrix[0])
+        while(row >= 0 and col < size):
+            ele = matrix[row][col]
+            if ele == target:
+                return (row, col)
+            elif ele > target:
+                row -= 1
+            else:
+                col += 1
+        return (-1, -1)
+'''
