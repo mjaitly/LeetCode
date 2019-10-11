@@ -1,0 +1,35 @@
+Round 1,2,3 are similar to others.
+
+3 Virtual rounds
+
+Round 1:
+
+Tell me about yourself
+Merge k sorted arrays to one sorted array
+Round 2:
+
+Tell me about yourself
+Tell me about a time when you had to work on a project with unclear responsibilities
+Design a chess game. What are your possible classes, objects, attributes etc. (No coding, only discussion)
+What is the logic flow with this design ?
+Round 3:
+
+Create an api and develop find and replace functions like linux command.
+
+find (eg linux command: find dir_name file_name)
+NOTE: Have to find matching file_name files from even sub-directories of dir_name
+Given:
+File f = directory path and file name
+Helper functions:
+f.fileName()
+f.isDirectory()
+f.lastUpdateDate()
+
+return: List (all matched files)
+
+LP questions:
+
+Tell me a time how you helped one of your colleague
+Tell me a time you came across an unexpected obstacle
+Tell me a time you could not deliver work on deadline
+Tell me about a time when you invented something
