@@ -1,0 +1,7 @@
+1. Array of n integers with numbers between 1 to N (some reapeating). 
+Find all missing numbers.
+2. 1 million files with 1 million integers each - add all of them  (system design)
+3. Given an array, find sum of all elements of all contiguous sub arrays (sub-sequence)
+4. Design dns system university (given url patterns and whether to allow or 
+disallow some files), design a system that can add a new rule and given a url, 
+detect whether to allow or block it efficiently

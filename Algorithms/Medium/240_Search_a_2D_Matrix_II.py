@@ -40,15 +40,19 @@ class Solution(object):
     def searchMatrix(self, matrix, target):
         if not matrix or not matrix[0]:
             return False
-        
+
         ll = 0
         rr = len(matrix[0]) - 1
         while ll <= rr and matrix:
+            print("ll: " + str(ll) + " rr: " + str(rr))
             temp = matrix.pop(0)
             l, r = ll, rr
             while l <= r:
+                print("l: " + str(l) + " r: " + str(r))
                 mid = (l + r) // 2
+                print("mid: ", mid)
                 if temp[mid] == target:
+                    print("result: ", (rr-1, mid))
                     return True
                 elif temp[mid] < target:
                     l = mid + 1
@@ -57,39 +61,43 @@ class Solution(object):
                     rr = mid - 1
         return False
 
+
+
+# For index as return
+
+# class Solution:
+#     def searchMatrix(self, matrix, target):
+#         """
+#         :type matrix: List[List[int]]
+#         :type target: int
+#         :rtype: bool
+#         """
+#         if not matrix:
+#             return (-1, -1)
+#         row, col, size = len(matrix) - 1, 0, len(matrix[0])
+#         # print("len(matrix): ", len(matrix))
+#         # print("len(matrix[0]): ", len(matrix[0]))
+#         while(row >= 0 and col < size):
+#             ele = matrix[row][col]
+#             if ele == target:
+#                 return (row, col)
+#             elif ele > target:
+#                 row -= 1
+#             else:
+#                 col += 1
+#         return (-1, -1)
+
+
 if __name__ == "__main__":
     matrix = [
-                [1,   4,  7, 11, 15],
-                [2,   5,  8, 12, 19],
-                [3,   6,  9, 16, 22],
-                [10, 13, 14, 17, 24],
-                [18, 21, 23, 26, 30]
+                [1,   4,  7, 11, 15, 16],
+                [2,   5,  8, 12, 19, 20],
+                [3,   6,  9, 16, 22, 23],
+                [10, 13, 14, 17, 24, 25],
+                [18, 21, 23, 26, 30, 31]
             ]
-    target = 23
+    target = 20
     sol = Solution()
     result = sol.searchMatrix(matrix, target)
     print(result)
 
-'''
-# For index as return
-
-class Solution:
-    def searchMatrix(self, matrix, target):
-        """
-        :type matrix: List[List[int]]
-        :type target: int
-        :rtype: bool
-        """
-        if not matrix:
-            return (-1, -1)
-        row, col, size = len(matrix) - 1, 0, len(matrix[0])
-        while(row >= 0 and col < size):
-            ele = matrix[row][col]
-            if ele == target:
-                return (row, col)
-            elif ele > target:
-                row -= 1
-            else:
-                col += 1
-        return (-1, -1)
-'''
